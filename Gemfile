@@ -1,6 +1,6 @@
 source "https://rubygems.org"
-ruby '2.2.4'
-gem 'sinatra', '1.1.0'
+ruby '2.6.0'
+gem 'sinatra', "2.0.5"
 gem 'unicorn'
 gem 'engtagger'
 gem 'httparty'
