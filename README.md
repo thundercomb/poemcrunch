@@ -8,14 +8,14 @@ PoemCrunch can be seen in action at [poemcrunch.com](http://poemcrunch.com).
 
 ## Getting started
 
-It's easy to get started. PoemCrunch runs as a Sinatra app that you can spin up locally. Make sure you have Ruby, RubyGems, and Bundler installed.
-
-The Gemfile specifies Ruby 2.2.4, but you can comment it out and run safely on any Ruby >= 2.0.0.
+It's easy to get started. PoemCrunch runs as a Sinatra app that you can spin up locally. It targets Ruby 3.3.9 (managed via rbenv; see `.ruby-version`), with Bundler installed.
 
 ```
-bundle
-bundle exec unicorn -p 5000 -c unicorn.rb
+bundle install
+bundle exec puma -C config/puma.rb
 ```
+
+By default this serves on port 5000. Set `PORT` to use another, e.g. `PORT=5001 bundle exec puma -C config/puma.rb`.
 
 Now point your browser to [http://localhost:5000](http://localhost:5000).
 

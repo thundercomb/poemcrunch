@@ -1,12 +1,16 @@
 source "https://rubygems.org"
-ruby '2.6.0'
-gem 'sinatra', "2.0.5"
-gem 'unicorn'
-gem 'engtagger'
-gem 'httparty'
-gem 'scalpel'
-gem 'ruby_rhymes'
-gem 'gingerice'
-gem 'moby'
-gem 'verbs'
-gem 'english'
+ruby "3.3.9"
+
+gem "sinatra"
+gem "puma"
+
+# NLP / poem generation
+gem "ruby_rhymes"
+gem "gingerice"
+gem "moby"
+gem "verbs"
+# Pluralization (String#pluralize). Replaces the defunct `english` gem's
+# english/inflect. Also pulled in transitively by `verbs`.
+gem "activesupport"
+
+gem "json"

@@ -1,75 +1,118 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.2)
-      concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (>= 0.7, < 2)
-      minitest (~> 5.1)
-      tzinfo (~> 1.1)
-    addressable (2.6.0)
-      public_suffix (>= 2.0.2, < 4.0)
-    awesome_print (1.8.0)
-    concurrent-ruby (1.1.4)
-    english (0.6.3)
-      language
-    engtagger (0.2.1)
-    gingerice (1.2.2)
+    activesupport (8.1.3.1)
+      base64
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.3.1)
+      connection_pool (>= 2.2.5)
+      drb
+      i18n (>= 1.6, < 2)
+      json
+      logger (>= 1.4.2)
+      minitest (>= 5.1)
+      securerandom (>= 0.3)
+      tzinfo (~> 2.0, >= 2.0.5)
+      uri (>= 0.13.1)
+    addressable (2.9.0)
+      public_suffix (>= 2.0.2, < 8.0)
+    awesome_print (1.9.2)
+    base64 (0.3.0)
+    bigdecimal (4.1.2)
+    concurrent-ruby (1.3.8)
+    connection_pool (3.0.2)
+    drb (2.2.3)
+    gingerice (1.3.0)
       addressable
       awesome_print
-    httparty (0.16.4)
-      mime-types (~> 3.0)
-      multi_xml (>= 0.5.2)
-    i18n (1.6.0)
+    i18n (1.15.2)
       concurrent-ruby (~> 1.0)
-    kgio (2.11.2)
-    language (0.6.0)
-    mime-types (3.2.2)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2018.0812)
-    minitest (5.11.3)
+    json (2.21.2)
+    logger (1.7.0)
+    minitest (6.0.6)
+      drb (~> 2.0)
+      prism (~> 1.5)
     moby (1.2.0)
-    multi_xml (0.6.0)
-    mustermann (1.0.3)
-    public_suffix (3.0.3)
-    rack (2.0.6)
-    rack-protection (2.0.5)
-      rack
-    raindrops (0.19.0)
+    mustermann (3.1.1)
+    nio4r (2.7.5)
+    prism (1.9.0)
+    public_suffix (7.0.5)
+    puma (8.0.2)
+      nio4r (~> 2.0)
+    rack (3.2.7)
+    rack-protection (4.2.1)
+      base64 (>= 0.1.0)
+      logger (>= 1.6.0)
+      rack (>= 3.0.0, < 4)
+    rack-session (2.1.2)
+      base64 (>= 0.1.0)
+      rack (>= 3.0.0)
     ruby_rhymes (0.1.2)
-    scalpel (0.2.1)
-    sinatra (2.0.5)
-      mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.5)
+    securerandom (0.4.1)
+    sinatra (4.2.1)
+      logger (>= 1.6.0)
+      mustermann (~> 3.0)
+      rack (>= 3.0.0, < 4)
+      rack-protection (= 4.2.1)
+      rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
-    thread_safe (0.3.6)
-    tilt (2.0.9)
-    tzinfo (1.2.5)
-      thread_safe (~> 0.1)
-    unicorn (5.5.0)
-      kgio (~> 2.6)
-      raindrops (~> 0.7)
-    verbs (2.1.4)
+    tilt (2.9.0)
+    tzinfo (2.0.6)
+      concurrent-ruby (~> 1.0)
+    uri (1.1.1)
+    verbs (3.1.0)
       activesupport (>= 2.3.4)
       i18n
 
 PLATFORMS
+  arm64-darwin-25
   ruby
+  x86_64-linux
 
 DEPENDENCIES
-  english
-  engtagger
+  activesupport
   gingerice
-  httparty
+  json
   moby
+  puma
   ruby_rhymes
-  scalpel
-  sinatra (= 2.0.5)
-  unicorn
+  sinatra
   verbs
 
+CHECKSUMS
+  activesupport (8.1.3.1) sha256=85458765f25ea48b9019c46b6bb3fa5683197bf4280d9f06710a6e8d7a831376
+  addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
+  awesome_print (1.9.2) sha256=e99b32b704acff16d768b3468680793ced40bfdc4537eb07e06a4be11133786e
+  base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
+  bigdecimal (4.1.2) sha256=53d217666027eab4280346fba98e7d5b66baaae1b9c3c1c0ffe89d48188a3fbd
+  bundler (4.0.19) sha256=b48056e4c77fb3853cc47775b5447ede44aaa4f53c32f168014ab4fe86587d47
+  concurrent-ruby (1.3.8) sha256=b2f1be836e968ccc78ccfce277ea79c72a88633f22306782c16ff23fb415d1e1
+  connection_pool (3.0.2) sha256=33fff5ba71a12d2aa26cb72b1db8bba2a1a01823559fb01d29eb74c286e62e0a
+  drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
+  gingerice (1.3.0) sha256=845d434bc3f70fd2e1b180b90a89813216b3e9a08dbda541a212986c95e56917
+  i18n (1.15.2) sha256=00f9eb62412fe593b2a65a97daa75300d37abb8f7202ec748e94b6d46a9dd1b5
+  json (2.21.2) sha256=1f1d3b7cf2b3ba1a69beca0bb6db13d5438b80bff3cd54cdaaa620b9b07c1c6a
+  logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
+  minitest (6.0.6) sha256=153ea36d1d987a62942382b61075745042a2b3123b1cd48f4c3675af9cc7d6f1
+  moby (1.2.0) sha256=6ececa119b47489b9d97f00120936c623c1441a02b98c93101561c5e45048b14
+  mustermann (3.1.1) sha256=4c6170c7234d5499c345562ba7c7dfe73e1754286dcc1abb053064d66a127198
+  nio4r (2.7.5) sha256=6c90168e48fb5f8e768419c93abb94ba2b892a1d0602cb06eef16d8b7df1dca1
+  prism (1.9.0) sha256=7b530c6a9f92c24300014919c9dcbc055bf4cdf51ec30aed099b06cd6674ef85
+  public_suffix (7.0.5) sha256=1a8bb08f1bbea19228d3bed6e5ed908d1cb4f7c2726d18bd9cadf60bc676f623
+  puma (8.0.2) sha256=c8ed871dfbbe66448ea9ffd46692342d9804d4071522b52b5331b7b6e7b686fb
+  rack (3.2.7) sha256=93e13e1c24f93556671d85d2d79fa228c3485815c50d7e2f265b5330c6528fb7
+  rack-protection (4.2.1) sha256=cf6e2842df8c55f5e4d1a4be015e603e19e9bc3a7178bae58949ccbb58558bac
+  rack-session (2.1.2) sha256=595434f8c0c3473ae7d7ac56ecda6cc6dfd9d37c0b2b5255330aa1576967ffe8
+  ruby_rhymes (0.1.2) sha256=5021ba0f395508516885826260ba790730fd49645a02a19b3b9a93952afc19a6
+  securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
+  sinatra (4.2.1) sha256=b7aeb9b11d046b552972ade834f1f9be98b185fa8444480688e3627625377080
+  tilt (2.9.0) sha256=da5735d0280bba96e9a91041bb14aee435ccad5c17b0fa519249ae543d9aa3a5
+  tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
+  uri (1.1.1) sha256=379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6
+  verbs (3.1.0) sha256=fa8fe649a36b24b00255414d558010ff308689b7ddad14d7244c2b961a0bbd17
+
 RUBY VERSION
-   ruby 2.6.0p0
+  ruby 3.3.9
 
 BUNDLED WITH
-   1.17.2
+  4.0.19

@@ -2,7 +2,7 @@ require 'ruby_rhymes'
 require 'gingerice'
 require 'moby'
 require 'verbs'
-require 'english/inflect'
+require 'active_support/core_ext/string/inflections'
 require 'sinatra'
 
 class Web < Sinatra::Base
@@ -105,7 +105,7 @@ class Web < Sinatra::Base
             gsub(/[^A-Z]/,'')].
             sample(random: r).
             strip
-          sub_word = "#{stem_word}".en.plural
+          sub_word = "#{stem_word}".pluralize
           memory[word[/<([0-9]+)>/m, 1]] = sub_word
           sub_text = word.
             gsub(/<[0-9]+>/,'').
@@ -289,7 +289,7 @@ class Web < Sinatra::Base
             gsub(/[^A-Z]/,'')].
             sample(random: r).
             strip
-          sub_word = "#{stem_word}".en.plural
+          sub_word = "#{stem_word}".pluralize
           sub_text = word.
             gsub(/<NNs[A-Z]*>/, sub_word)
           ( new_poem[index] ||= "" ).
@@ -475,7 +475,6 @@ class Web < Sinatra::Base
       match = 2
       count = 0
      
-      File.open('/tmp/test2', 'w') { |file| file.write("#{new_poem[index]}") }
       new_poem[index] = new_poem[index] + '<br>'
     end
 
