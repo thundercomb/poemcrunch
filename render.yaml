@@ -1,0 +1,19 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Deploys PoemCrunch as a free native-Ruby web service (no Docker).
+# Ruby version comes from .ruby-version (3.3.9). Render injects $PORT,
+# which config/puma.rb already reads.
+services:
+  - type: web
+    name: poemcrunch
+    runtime: ruby
+    plan: free
+    buildCommand: bundle install
+    startCommand: bundle exec puma -C config/puma.rb
+    healthCheckPath: /
+    envVars:
+      - key: RACK_ENV
+        value: production
+      # One worker keeps memory comfortably within the free tier's 512MB.
+      # Concurrency is handled by puma's threads (RAILS_MAX_THREADS).
+      - key: WEB_CONCURRENCY
+        value: "1"
