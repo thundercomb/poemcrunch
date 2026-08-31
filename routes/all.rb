@@ -54,16 +54,12 @@ class Web < Sinatra::Base
     }
   end 
 
+  # Retired: this Yeats style was removed from the frontend because the
+  # generated results weren't up to scratch. The endpoint is kept but is no
+  # longer in operation, so it returns 410 Gone rather than erroring.
   get '/style/yeats_an_irish_airman_foresees' do
-    poem = create_poem('William Butler Yeats','An Irish Airman Foresees His Death')
-    title = poem[0].capitalize
-
-    erb :poem_layout, :locals => { 
-	:poem  => "#{poem.join("\n")}",
-	:title => "#{title}",
-	:url   => "/style/yeats_an_irish_airman_foresees"
-    }
-  end 
+    halt 410, "This poem style has been retired and is no longer available."
+  end
 
   get '/style/dylan_thomas_do_not_go_gentle' do
     poem = create_poem('Dylan Thomas','Do Not Go Gentle Into That Good Night')
